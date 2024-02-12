@@ -1,1 +1,110 @@
-font-family: 'Great Vibes', cursive;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+			font-family: 'Great Vibes', bold;
+			
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            cursor: pointer;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden; /* Hide overflowing stars */
+            z-index: 1; /* Ensure modal is on top */
+        }
+
+        /* Close button for the modal */
+        .close {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+        }
+
+        /* Star animation */
+        .star {
+            display: inline-block;
+            animation: flyStar 5s linear infinite;
+            font-size: 24px;
+            color: gold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .star:nth-child(2) {
+            animation-duration: 4s; /* Make the second star move faster */
+        }
+
+        .star:nth-child(3) {
+            animation-duration: 6s; /* Make the third star move slower */
+        }
+
+        @keyframes flyStar {
+            to {
+                transform: translateX(120vw) translateY(-120vh);
+            }
+        }
+		
+		
+    </style>
+</head>
+<body>
+
+<button id="valentineButton" onclick="openModal()">Click me</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p style="font-size: 60px;  color: red; font-style: verdana; ">HAPPY VALENTINE'S DAY!</p>
+    <!-- Flying Stars -->
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("valentineButton").style.visibility = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementById("valentineButton").style.visibility = "visible";
+    }
+</script>
+
+</body>
+</html>
